@@ -1,3 +1,4 @@
+#loading the saved numpy arrays
 import numpy as np
 data=np.load('data.npy')
 target=np.load('target.npy')
@@ -42,5 +43,6 @@ from sklearn.model_selection import train_test_split
 
 train_data,test_data,train_target,test_target=train_test_split(data,target,test_size=0.1)
 checkpoint = tf.keras.callbacks.ModelCheckpoint('model-{epoch:03d}.model',monitor='val_loss',verbose=0,save_best_only=True,mode='auto')
+#to save the best epoch model based on the val_loss...it is saved as .model file or as a folder in the repository
 history=cnn.fit(train_data,train_target,epochs=20,callbacks=[checkpoint],validation_split=0.2)
 
