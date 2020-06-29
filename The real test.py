@@ -2,9 +2,9 @@ from keras.models import load_model
 import cv2
 import numpy as np
 
-model = load_model('model-009.model')
+model = load_model('model-009.model')#as my 9th epoch was best 
 
-face_clsfr=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+face_clsfr=cv2.CascadeClassifier('haarcascade_frontalface_default.xml') #using the cascader ....this file has been uploaded in the repo
 
 source=cv2.VideoCapture(0)
 
@@ -35,7 +35,7 @@ while(True):
     cv2.imshow('LIVE',img)
     key=cv2.waitKey(1)
     
-    if(key==27):
+    if(key==27): #ESC button
         break
         
 cv2.destroyAllWindows()
