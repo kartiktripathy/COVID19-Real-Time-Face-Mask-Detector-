@@ -1,3 +1,4 @@
+#Initializing the data path and assigning the classes
 import cv2 ,os
 data_path = 'dataset'
 classes = os.listdir(data_path)
@@ -35,7 +36,7 @@ for classes in classes:
 
 import numpy as np
 
-data=np.array(data)/255.0
+data=np.array(data)/255.0 #Rescaling the images
 data=np.reshape(data,(data.shape[0],100,100,1))
 target=np.array(target)
 
@@ -45,3 +46,5 @@ new_target=np_utils.to_categorical(target)
 
 np.save('data',data)
 np.save('target',new_target)
+#We save the data and target as numpy arrays 
+#these are uploaded in the zip file named as k.zip
