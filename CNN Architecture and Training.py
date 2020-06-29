@@ -43,6 +43,7 @@ from sklearn.model_selection import train_test_split
 
 train_data,test_data,train_target,test_target=train_test_split(data,target,test_size=0.1)
 checkpoint = tf.keras.callbacks.ModelCheckpoint('model-{epoch:03d}.model',monitor='val_loss',verbose=0,save_best_only=True,mode='auto')
-#to save the best epoch model based on the val_loss...it is saved as .model file or as a folder in the repository
+#to save the best epoch model based on the val_loss...it is saved as .model file or as a folder in your working directory
+#I havent uploaded as it cant be uploaded on github...in my case it was the 9th epoch ...which i will be using in the tesing 
 history=cnn.fit(train_data,train_target,epochs=20,callbacks=[checkpoint],validation_split=0.2)
 
